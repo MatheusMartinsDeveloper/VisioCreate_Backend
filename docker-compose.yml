@@ -1,0 +1,23 @@
+services:
+  database:
+    image:  postgres:latest
+    container_name: visiocreate_database
+    restart: always
+    environment:
+      POSTGRES_USER:  visiocreate_admin
+      POSTGRES_PASSWORD:  visiocreate_password
+      POSTGRES_DB:  visiocreate_database
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    container_name: adminer_visiocreate
+    restart: always
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:
