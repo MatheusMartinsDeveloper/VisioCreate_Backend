@@ -21,7 +21,7 @@ model Products {
   isDiscounted       Boolean
   discountPercentage Float?
   addedDate          DateTime @default(now())
-  updatedData        DateTime @updatedAt
+  updatedAt        DateTime @updatedAt
 }
 
 model Images {
